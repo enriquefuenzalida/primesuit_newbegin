@@ -346,7 +346,7 @@ div#prodlist h5 {
 
 
 /*----------- galería ------------*/
-div.flexOne {
+    div.flexOne {
     display: flex;
     min-width: 380px;
     padding: 0;
@@ -356,17 +356,16 @@ div.flexOne {
     align-content: space-between;
     gap: 13px;
     margin: 13px auto 0 auto;
-}
-div.flexOne div._prod {
+    }
+    div.flexOne div._prod {
     display: inline-block;
     flex: 1 1 187.75px;
     padding: 300px 21px 21px 21px;
     margin: 0;
     border-width: 2px;
     border-radius: 5px;
-    border-color: #000;
+    border-color: #888;
     border-style: solid;
-    background-image: url('deptocatgb.jpg');
     background-size: cover;
     background-position: center center;
    }
@@ -384,3 +383,56 @@ div.flexOne div._prod {
    div.flexOne div._prod ._proddesc h5 {
        font-size: 1em;
    }
+
+
+
+
+/*----------- listar ------------*/
+#productoslista {
+    border-width: 1px;
+    border-radius: 13px;
+    border-color: #888;
+    border-style: solid;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 943px;
+    padding: 21px;
+    text-align: center;
+    font-family: 'Open Sans', Sans-serif;
+}
+#productoslista h2  {
+    margin: 0.5em 0;
+    font-size: 55px;
+    font-weight: bold;
+    letter-spacing: -0.05em;
+    font-family: 'Open Sans', Sans-serif;
+}
+#productoslista dl, #productoslista hr  {
+    margin: 1em 0;
+}
+#productoslista dl dt, #productoslista dl dd {
+    display: inline-block;
+    margin: 0;
+}
+#productoslista dl dt h3, #productoslista dl dd p, #productoslista hr {
+    font-size: 21px;
+    font-family: 'Open Sans', Sans-serif;
+    letter-spacing: -0.03em;
+    margin: 0;
+    padding: 0;
+}
+#productoslista dl dt h3 {
+    color: #888;
+    font-weight: lighter;
+}
+#productoslista dl dd p {
+    font-weight: bold;
+}
+#productoslista dl.prodNombre dt {
+    display: none;
+}
+#productoslista dl.prodNombre dd p {
+    font-size: 34px;
+    font-weight: bold;
+    text-transform: uppercase;
+}

@@ -1,46 +1,53 @@
 {% extends 'app/base.html' %}
 
+{% block js %}
+<script>
+    function eliminarProducto(id) {
+            Swal.fire ({
+                "title": "¿Estás seguro?",
+                "text": "Esta acción no se puede deshacer",
+                "icon": "question",
+                "showCancelButton": true,
+                "cancelButtonText": "No, cancelar.",
+                "confirmButtonText": "Si, eliminar.",
+                "reverseButtons": true,
+                "confirmButtonColor": "#000" })
+            .then(function(result){
+                if(result.isConfirmed) {
+                    window.location.href = "/Eliminar-producto/"+id+"/"
+                }
+            })
+    }
+</script>
+{% endblock %}
+
+
 {% block contenido %}
 {% load humanize %}
-<br>
-<div style="padding: 1.5em;">
-<div class="card" style="max-width: 987px; margin: 2em auto; ">
-    <div class="card-body">
-        <h2>Listado de productos</h2>
-        <hr>
-        <table class="table table-striped table-hover table-responsive-sm">
-            <tr>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Marca</th>
-                <th>¿es nuevo?</th>
-                <th>Opciones:</th>
-    
-            </tr>
-            {% for p in productos %}
-            <tr>
-                <td>{{ p.nombre | title }}</td>
-                <td>${{ p.precio | intcomma }}</td>
-                <td>{{ p.marca | title }}</td>
-                <td>
-                    {% if p.nuevo %}
-                    SI
-                    {% else %}
-                    NO
-                    {% endif %}
-    
-                </td>
-                <td>
-                    <a href="{% url 'Eliminar_producto' p.id %}" class="btn btn-secondary btn-sm">Eliminar</a>
-                    <a href="{% url 'Modificar_producto' p.id %}" class="btn btn-primary btn-sm">Modificar</a>
-                </td>
-            </tr>
-            {% endfor %}
-    
-        </table>
-    </div>
 
+<div style="padding: 34px;">
+<div id="productoslista">
+<h2>Listado de Productos</h2>
+<hr/>
+{% for p in productos %}
+<div>
+<dl class="prodNombre">
+<dt><h3>Nombre:</h3></dt>
+<dd><p>{{ p.nombre | title }}</p></dd>
+</dl>
+<dl>
+<dt><h3>Marca:</h3></dt>
+<dd><p>{{ p.marca | title }}.</p></dd>
+<dt><h3>Estado:</h3></dt>
+<dd><p>{% if p.nuevo %}Nuevo{% else %}Reacondicionado{% endif %}.</p></dd>
+<dt><h3>Precio:</h3></dt>
+<dd><p>${{ p.precio | intcomma }}.</p></dd>
+</dl>
+<p><a href="#" onclick="eliminarProducto( {{ p.id }} )" class="btn btn-secondary btn-sm">Eliminar</a> | <a href="{% url 'Modificar_producto' p.id %}" class="btn btn-primary btn-sm">Modificar</a></p>
+</div>
+<hr/>
+{% endfor %}
 </div>
 </div>
-   
+
 {% endblock %}

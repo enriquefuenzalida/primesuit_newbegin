@@ -18,40 +18,9 @@
 </head>
 <body>
 
-    
-    <!--
-    <header id="header">
-        <img class="menu" src="{% static 'app/img/menuiconwhite.png' %}" alt="menu" id="menu">
-        <div class="contenedor_logo" style="padding-left: 1em;">
-            <span style="font-size: 2em; color: #fff; font-weight: bold;">SuitPrime</span>
-             <img  class="logo"  src="{% static 'app/img/tecnomarketpngicono.png' %}" alt="logo"> 
-        </div>
-
-
-        <div>
-
-
-            <nav id="nav">
-                <ul>
-                    <li>
-                        <a href="{% url 'home' %}"> Inicio </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'contacto' %}">Contacto</a>
-                    </li>
-                    <li><a href="{% url 'galeria' %}">Galería</a></li>
-                    <li><a href="{% url 'agregar_producto' %}">Agergar producto</a></li>
-                    <li><a href="{% url 'Listar_producto' %}">Listado</a></li>
-                </ul>
-            </nav>
-
-        </div>
-
-    </header>
--->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container px-5">
-            <a class="navbar-brand" href="/" style="font-weight: bold;">SuitPrime</a>
+            <a class="navbar-brand" href="/" style="font-family: 'Open sans', Sans-serf; font-weight: bold;">SuitPrime</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="juanito">
@@ -71,20 +40,6 @@
 
     </div>
 
-<!--
-    <footer>
-        <div class="marcas">
-            <img src="{% static 'app/img/footer/apple.png' %}" alt="apple">
-            <img src="{% static 'app/img/footer/lenovo.png' %}" alt="lenovo">
-            <img src="{% static 'app/img/footer/microsoft.png' %}" alt="microsoft">
-            <img src="{% static 'app/img/footer/samsung.png' %}" alt="samsung">
-            <img src="{% static 'app/img/footer/xiaomi.png' %}" alt="xiaomi">
-        </div>
-        <div class="logo_footer">
-            <img src="{% static 'app/img/tecnomarketpngicono.png' %}" alt="logo">
-        </div>
-    </footer>
--->
     <footer class="bg-dark py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
@@ -101,8 +56,19 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="{% static 'app/js/menu.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-{% block js %}
-{% endblock %}
+    {% if messages %} {% for m in messages %}
+        <script>
+            Swal.fire ({
+                "title": "Felicitaciones",
+                "text": "{{ m }}",
+                "icon": "success"  })
+        </script>
+    {% endfor %} {% endif %}
+
+    {% block js %}
+    {% endblock %}
+
 </body>
 </html>
