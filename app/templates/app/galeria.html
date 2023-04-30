@@ -17,6 +17,7 @@
 {% load static %}
 
 {% load humanize %}
+<!--
 <div class="row">
     <div class="col-12" style="max-width: 987px; margin: 2em auto;">
         <div class="card">
@@ -46,8 +47,28 @@
 </div>
 </div>
 </div>
+-->
+<div style="padding: 34px;">
+    <div style="max-width: 987px; margin: 2em auto;">
 
+<h2>Productos</h2>
+<hr/>
+<div class="flexOne">
+{% for p in productos %}
+ 
+     <div class="_prod" {% if p.imagen %} style="background-image: url('{{ p.imagen.url }}');" {% endif %}>
+          
+          <div class="_proddesc">
+               <h5>{{ p.marca | capfirst }}</h5>
+               <h2>{{ p.nombre | title }}</h2>
+               <h3>$ {{ p.precio | intcomma }}</h3>
+          </div>
+     </div>
 
+{% endfor %}
+</div>
+</div>
+</div>
 <!--
 <h2>Galería de nuestra tienda</h2>
 <br><br>

@@ -342,3 +342,45 @@ div#prodlist h3 {
 div#prodlist h5 {
     font-size: 1em;
 }
+
+
+
+/*----------- galería ------------*/
+div.flexOne {
+    display: flex;
+    min-width: 380px;
+    padding: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+    gap: 13px;
+    margin: 13px auto 0 auto;
+}
+div.flexOne div._prod {
+    display: inline-block;
+    flex: 1 1 187.75px;
+    padding: 300px 21px 21px 21px;
+    margin: 0;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: #000;
+    border-style: solid;
+    background-image: url('deptocatgb.jpg');
+    background-size: cover;
+    background-position: center center;
+   }
+   div.flexOne div._prod ._proddesc {
+        border-radius: 3px;
+        background: rgba(255,255,255, 0.7);
+        padding: 5px;
+   }
+   div.flexOne div._prod ._proddesc h2, h3 {
+       font-size: 1.3em;
+   }
+   div.flexOne div._prod ._proddesc h3 {
+       font-style: italic;
+   }
+   div.flexOne div._prod ._proddesc h5 {
+       font-size: 1em;
+   }
