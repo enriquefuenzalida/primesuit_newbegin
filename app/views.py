@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto
 from .forms import ContactoForm, ProductoForms
 
@@ -52,3 +52,24 @@ def Listar_producto(request):
     }
 
     return render(request,'app/producto/listar.html', data)
+
+def Modificar_producto(request, id):
+
+    producto = get_object_or_404(Producto, id=id)
+    data = {
+        'form':ProductoForms(instance=producto)
+    }
+    if request.method == "POST":
+        formulario = ProductoForms(data=request.POST,instance=producto, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to="Listar_producto")
+        data["form"] = formulario
+             
+
+    return render(request,'app/producto/modificar.html',data)
+
+def Eliminar_producto(request, id):
+    producto = get_object_or_404(Producto, id=id)
+    producto.delete()
+    return redirect(to="Listar_producto")
