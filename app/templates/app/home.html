@@ -1,5 +1,7 @@
 {% extends 'app/base.html' %}
 
+{% load static %}
+
 {% block js %}
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script>
@@ -16,48 +18,81 @@
 {% block css %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     
+<link href="{% static 'app/css/styles.css' %}" rel="stylesheet" />
 {% endblock %}
 
 
 {% block contenido %}
 
-{% load static %}
-<div class="slider">
-    <div>
-        <img src="{% static 'app/img/banner/banner1.png' %}" alt="">
-    </div>
-    <div>
-        <img src="{% static 'app/img/banner/banner2.png' %}" alt="">
-    </div>
-    <div>
-        <img src="{% static 'app/img/banner/banner3.png' %}" alt="">
-    </div>
-</div>
-{% load humanize %}
-<h2>Productos</h2>
-<div class="productos">
 
-    {% for p in productos %}
 
-    <div class="producto">
-
-        <div class="contenedor_producto">
-            {% if p.imagen %}
-            <img src="{{ p.imagen.url }}" alt="producto imagen">
-            {% endif %}
-            <div class="detalle">
-                <h5>{{ p.marca | capfirst }}</h5>
-                <h2>{{ p.nombre | title }}</h2>
-                <h3>$ {{ p.precio | intcomma }}</h3>
+            <!-- Header-->
+            <div class="bg-dark py-5 bg-img">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 id="portadaTitulo">SuitPrime</h1>
+                                <p class="portadaTituloDesc" >Expertos en limpieza de cristales</p>
+                                <p class="portadaTituloDesc" ><a id="portadaTituloPlanes"  href="pricing.html">Ver planes</a></p>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+<section class="py-5" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Procesos comprobados para lograr el mejor resultado</h2></div>
+            <div class="col-lg-8">
+                <div class="row gx-5 row-cols-1 row-cols-md-2">
+                    <div class="col mb-5 h-100">
+                        <h2 class="h5">Evaluación técnica</h2>    
+                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie dapibus placerat. Cras a tincidunt dolor, non euismod odio. Aenean auctor dui nec bibendum euismod. Morbi faucibus sagittis lorem.</p>
+                    </div>
+                    <div class="col mb-5 h-100">
+                        <h2 class="h5">Estudio de calidad</h2>
+                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie dapibus placerat. Cras a tincidunt dolor, non euismod odio. Aenean auctor dui nec bibendum euismod. Morbi faucibus sagittis lorem.</p>
+                    </div>
+                    <div class="col mb-5 mb-md-0 h-100">
+                        <h2 class="h5">Detección de problemas</h2>
+                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie dapibus placerat. Cras a tincidunt dolor, non euismod odio. Aenean auctor dui nec bibendum euismod. Morbi faucibus sagittis lorem.</p>
+                    </div>
+                    <div class="col h-100">
+                        <h2 class="h5">Presupuestos</h2>
+                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie dapibus placerat. Cras a tincidunt dolor, non euismod odio. Aenean auctor dui nec bibendum euismod. Morbi faucibus sagittis lorem.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
+</section>
 
-    {% endfor %}
 
+
+
+<!-- Testimonial section-->
+<div class="py-5 bg-light">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-10 col-xl-7">
+                <div class="text-center">
+                    <div class="fs-4 mb-4 fst-italic">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie dapibus placerat. Cras a tincidunt dolor, non euismod odio. Aenean auctor dui nec bibendum euismod. Morbi faucibus sagittis lorem."</div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                        <div class="fw-bold">
+                            Tom Ato
+                            <span class="fw-bold text-primary mx-1">/</span>
+                            Cliente de Suit Prime
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 
 

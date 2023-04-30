@@ -1,0 +1,344 @@
+.tituloprecios {
+    display: block;
+    margin: 0 0 1em 0;
+    font-size: 2.1em !important;/*
+    -webkit-hyphens: auto;
+    hyphens: auto;*/
+}
+
+div#registroFormulario {
+    text-align: center;
+    margin: 34px auto 89px auto;
+    padding: 34px;
+    color: #204;
+}
+div#registroFormulario h1 {
+    font-size: 2.5em;
+}
+div#registroFormulario form {
+    display: block;
+    max-width: 961px;
+    min-width: 482px;
+    background-color: #eee;
+    border-radius: 13px;
+    padding: 34px 13px;
+    margin: 0 auto;
+}
+div#registroFormulario form p {
+    margin: 0 auto;
+    padding: 0;
+}
+div#registroFormulario form p label {
+    display: block;
+    -webkit-appearance: none;
+    margin: 5px auto;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #000;
+}
+div#registroFormulario form p input,
+div#registroFormulario form p textarea {
+    -webkit-appearance: none;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.4em;
+    color: #fff;
+}
+div#registroFormulario form div.dato p input,
+div#registroFormulario form div.dato p select,
+div#registroFormulario form div.dato p textarea,
+div#registroFormulario form div.dato p#consegninstr {
+    width: 422px;
+}
+div#registroFormulario form div.dato {
+    margin: 21px auto 13px auto;
+    padding: 0;
+}
+div#registroFormulario form div.dato input[type=text],
+div#registroFormulario form div.dato input[type=email],
+div#registroFormulario form div.dato input[type=password],
+div#registroFormulario form div.dato input[type=date],
+div#registroFormulario form div.dato input[type=submit],
+div#registroFormulario form div.dato input[type=reset],
+div#registroFormulario form div.dato textarea {
+    border: none;
+    background: rgba(85,85,85, 0.9);
+}
+div#registroFormulario form div.dato input[type=submit],
+div#registroFormulario form div.dato input[type=reset] {
+    border-radius: 21px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+div#registroFormulario form div.envio input[type=submit] {
+    width: 322px;
+    font-weight: bold;
+    padding: 13px 0;
+    margin: 5px auto;
+}
+div#registroFormulario form div.envio input[type=reset] {
+    width: 233px;
+    font-weight: normal;
+    font-size: 1.2em;
+    margin: 34px auto 0 auto;
+}
+div#registroFormulario form div.envio {
+    margin: 42px auto;
+    padding: 5px;
+}
+label span {
+    font-size: 0.8em;
+}
+#eBox {
+    display: none;
+}
+div#registroFormulario form p#consegninstr {
+    display: block;
+    list-style: none;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1em;
+    font-family: Sans-serif;
+    color: #000;
+    margin-bottom: 1.2em;
+}
+input ~ span.error {
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1em;
+    font-family: Sans-serif;
+    color: #f44;
+    margin: 5px auto;
+}
+
+
+
+/* ------------ Paneles Control --------------- */
+div#panelControl {
+    max-width: 961px;
+    min-width: 482px;
+    text-align: center;
+    margin: 34px auto 89px auto;
+    padding: 34px;
+    color: #204;
+}
+div#panelControl h1 {
+    font-size: 34px;
+}
+div#panelControlOpci {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: space-between;
+    gap: 34px;
+    background-color: #eee;
+    border-radius: 13px;
+    padding: 34px 13px;
+    margin: 0 auto;
+}
+div#panelControlOpci div.dato {
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+    flex: 2 0 377px;
+}
+div#panelControlOpci div.dato h4 {
+    font-size: 21px;
+    font-weight: bold;
+    margin: 13px auto;
+    padding: 0 34px 8px 34px;
+    text-align: left;
+    border-bottom: 1px solid #aaa;
+    color: #777;
+}
+div#panelControlOpci div.dato p {
+    margin: 21px auto;
+    padding: 0 34px;
+    text-align: left;
+}
+div#panelControlOpci div.dato p a {
+    font-size: 21px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+div#panelControlOpci div.dato p a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* ------------ Portada --------------- */
+h1#portadaTitulo  {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 5em;
+    text-align: center;
+    color: #eee; 
+    font-weight: bold; 
+}
+p.portadaTituloDesc {
+    font-size: 2em;
+    text-align: center;
+    color: #eee;
+}
+
+a#portadaTituloPlanes {
+    display: inline-block;
+    font-size: 0.8em;
+    color: white;
+    background: rgba(0,0,255,0.5);
+    border-radius: 5px;
+    padding: 8px 21px;
+    margin: 0 auto;
+    text-decoration: none;
+}
+.nav_admin{
+    display: none;
+}
+.nav_user{
+    display: block;
+}
+
+
+/*----------- Sesión Inicio ------------*/
+
+
+
+div#sesionInicioDivId {
+    text-align: center;
+    margin: 34px auto 89px auto;
+    padding: 34px;
+    color: #204;
+    }
+div#sesionInicioDivId h1 {
+    font-size: 2.5em;
+    }
+div#sesionInicioDivId > form#sesionInicio {
+    display: block;
+    max-width: 961px;
+    min-width: 482px;
+    background-color: #eee;
+    border-radius: 13px;
+    padding: 34px 13px;
+    margin: 0 auto;
+    text-align: center;
+    }
+div#sesionInicioDivId > form#sesionInicio > div.dato  {
+    margin: 34px auto;
+    padding: 0;
+    }
+div#sesionInicioDivId > form#sesionInicio > div.dato p {
+    padding: 0;
+    margin: 0;
+}
+div#sesionInicioDivId > form#sesionInicio > div.dato p label {
+    display: block;
+    -webkit-appearance: none;
+    margin: 3px auto;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #000;
+    }
+
+div#sesionInicioDivId > form#sesionInicio > div.dato p input {
+    -webkit-appearance: none;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.4em;
+    color: #fff;
+    width: 422px;
+    border: none;
+    background: rgba(85,85,85, 0.9);
+}
+
+div#sesionInicioDivId > form#sesionInicio > div.datoIngreso p a,
+div#sesionInicioDivId > form#sesionInicio > div.datoIngreso p button {
+    display: inline-block;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 21px;
+    margin: 8px auto;
+    text-decoration: none;
+    border: none;
+    font-weight: normal;
+}
+div#sesionInicioDivId > form#sesionInicio > div.datoIngreso p button {
+    background-color: #0b5ed7;
+}
+div#sesionInicioDivId > form#sesionInicio > div.datoIngreso p a.admIngrs {
+    background-color: #000;
+}
+div#sesionInicioDivId > form#sesionInicio > div.datoIngreso p a.registroBt {
+    background-color: #555;
+}
+
+
+div#horaReserva {
+    display: block;
+    text-align: center;
+}
+div#horaReserva a {
+    display: inline-block;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 21px;
+    margin: 55px auto;
+    text-decoration: none;
+    border: none;
+    font-weight: normal;
+    background-color: #0b5ed7;
+}
+
+
+
+
+
+/*
+a.sesIniRegLink { 
+    font-size: 21px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+a.sesIniRegLink:hover {
+    text-decoration: underline;
+    cursor:  pointer !important;
+}
+.sesIniRegLink2{
+    font-size: 70% !important;
+
+}*/
+/*----------- servicio ------------*/
+.sect_btn_pricing{
+    width: 20%;
+    margin-top: 30px;
+}
+
+
+ul#juanito li {
+    margin-left: 1em;
+}
+
+
+div#prodlist h2, h3 {
+    font-size: 1.3em;
+}
+div#prodlist h3 {
+    font-style: italic;
+}
+div#prodlist h5 {
+    font-size: 1em;
+}

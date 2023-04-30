@@ -1,12 +1,13 @@
 {% extends 'app/base.html' %}
 
 {% block js %}
-</script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 {% endblock %}
 
 {% block css %}
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 {% endblock %}
 
@@ -15,6 +16,39 @@
 
 {% load static %}
 
+{% load humanize %}
+<div class="row">
+    <div class="col-12" style="max-width: 987px; margin: 2em auto;">
+        <div class="card">
+            <div class="card-body">
+<h2>Productos</h2>
+<hr/>
+<div class="productos d-flex" id="prodlist">
+
+    {% for p in productos %}
+
+     <div class="producto col-md-3">
+          <div class="contenedor_producto">
+               {% if p.imagen %}<img src="{{ p.imagen.url }}" alt="producto imagen">{% endif %}
+               <div class="detalle">
+                    <h5>{{ p.marca | capfirst }}</h5>
+                    <h2>{{ p.nombre | title }}</h2>
+                    <h3>$ {{ p.precio | intcomma }}</h3>
+               </div>
+          </div>
+     </div>
+
+    {% endfor %}
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!--
 <h2>Galería de nuestra tienda</h2>
 <br><br>
 <div class="galeria">
@@ -24,6 +58,6 @@
      <a data-fancybox="gallery" href="{% static 'app/img/tienda/tienda4.jpg' %}"><img src="{% static 'app/img/tienda/tienda4.jpg' %}"></a>
      <a data-fancybox="gallery" href="{% static 'app/img/tienda/tienda5.jpg' %}"><img src="{% static 'app/img/tienda/tienda5.jpg' %}"></a>     
 </div>
- 
+ -->
 
 {% endblock %}

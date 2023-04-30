@@ -5,11 +5,7 @@ from .forms import ContactoForm, ProductoForms
 # Create your views here.
 
 def home(request):
-    productos = Producto.objects.all()
-    data = {
-        'productos' : productos
-    }
-    return render(request, 'app/home.html', data)
+    return render(request, 'app/home.html')
 
 def contacto(request):
     data = {
@@ -25,7 +21,11 @@ def contacto(request):
     return render(request, 'app/contacto.html', data)
 
 def galeria(request):
-    return render(request, 'app/galeria.html')
+    productos = Producto.objects.all()
+    data = {
+        'productos' : productos
+    }
+    return render(request, 'app/galeria.html', data)
 
 def agregar_producto(request):
 
