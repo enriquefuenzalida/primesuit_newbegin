@@ -28,8 +28,8 @@
 <div style="padding: 34px;">
 <div id="productoslista">
 <h2>Listado de Productos</h2>
-<hr/>
 {% for p in productos %}
+<hr/>
 <div>
 <dl class="prodNombre">
 <dt><h3>Nombre:</h3></dt>
@@ -45,7 +45,6 @@
 </dl>
 <p><a href="#" onclick="eliminarProducto( {{ p.id }} )" class="btn btn-secondary btn-sm">Eliminar</a> | <a href="{% url 'Modificar_producto' p.id %}" class="btn btn-primary btn-sm">Modificar</a></p>
 </div>
-<hr/>
 {% endfor %}
 </div>
 </div>
