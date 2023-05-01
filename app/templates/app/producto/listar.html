@@ -43,7 +43,7 @@
 <dt><h3>Precio:</h3></dt>
 <dd><p>${{ p.precio | intcomma }}.</p></dd>
 </dl>
-<p><a href="#" onclick="eliminarProducto( {{ p.id }} )" class="btn btn-secondary btn-sm">Eliminar</a> | <a href="{% url 'Modificar_producto' p.id %}" class="btn btn-primary btn-sm">Modificar</a></p>
+<p>{% if perms.app.delete_producto %}<a href="#" onclick="eliminarProducto( {{ p.id }} )" class="btn btn-secondary btn-sm">Eliminar</a>{% endif %} {% if perms.app.delete_producto and perms.app.change_producto  %}|{% endif %} {% if perms.app.change_producto %}<a href="{% url 'Modificar_producto' p.id %}" class="btn btn-primary btn-sm">Modificar</a>{% endif %}</p>
 </div>
 {% endfor %}
 
