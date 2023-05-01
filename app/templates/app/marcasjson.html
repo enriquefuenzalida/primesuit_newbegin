@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block js %}
+<script>
+$.get("http://127.0.0.1:8000/api/marca/?format=json",
+function(data){
+	$.each(data, function(i,item){
+		$("#productoLista").append("<div class=\"_prod2\"><div class=\"_proddesc\"><h5>" + item.nombre + "</h5></div></div>"); }); });
+        </script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+{% endblock %}
+
+
+{% block contenido %}
+
+<div style="padding: 34px;">
+    <div style="max-width: 987px; margin: 2em auto;">
+
+<h2>Marcas Lista JSON</h2>
+<hr/>
+<div class="flexOne" id="productoLista">
+ 
+
+</div>
+</div>
+</div>
+
+
+{% endblock %}
