@@ -27,6 +27,8 @@
                     <li><a href="{% url 'home' %}"> Inicio </a></li>
                     <li><a href="{% url 'contacto' %}">Contacto</a></li>
                     <li><a href="{% url 'galeria' %}">Galería</a></li>
+                    <li><a href="{% url 'galeriajson' %}">Fotos JSON</a></li>
+                    <li><a href="{% url 'marcasjson' %}">Marcas JSON</a></li>
                     {% if perms.app.add_producto %}
                     <li><a href="{% url 'agregar_producto' %}">Agergar producto</a></li>
                     {% endif %}
