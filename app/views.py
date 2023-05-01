@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto
 from .forms import ContactoForm, ProductoForms
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -47,9 +48,18 @@ def agregar_producto(request):
 def Listar_producto(request):
 
     productos = Producto.objects.all()
+    page = request.GET.get('page', 1)
+
+    try:
+        paginator = Paginator(productos, 2)
+        productos = paginator. page(page)
+    except:
+        raise Http404
+
 
     data = {
-        'productos' : productos
+        'entity' : productos,
+        'paginator' : paginator
     }
 
     return render(request,'app/producto/listar.html', data)

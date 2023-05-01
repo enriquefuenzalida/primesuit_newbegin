@@ -28,7 +28,7 @@
 <div style="padding: 34px;">
 <div id="productoslista">
 <h2>Listado de Productos</h2>
-{% for p in productos %}
+{% for p in entity %}
 <hr/>
 <div>
 <dl class="prodNombre">
@@ -46,6 +46,11 @@
 <p><a href="#" onclick="eliminarProducto( {{ p.id }} )" class="btn btn-secondary btn-sm">Eliminar</a> | <a href="{% url 'Modificar_producto' p.id %}" class="btn btn-primary btn-sm">Modificar</a></p>
 </div>
 {% endfor %}
+
+<div style="margin: 55px 0 0 0;">
+{% include 'app/paginator.html' %}
+</div>
+
 </div>
 </div>
 
