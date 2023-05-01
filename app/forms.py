@@ -2,6 +2,9 @@ from django import forms
 from .models import Contacto, Producto
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .validators import MaxSizeFileValidator
+from django.forms import ValidationError
+
 
 
 class ContactoForm(forms.ModelForm):
@@ -16,6 +19,18 @@ class ContactoForm(forms.ModelForm):
         
 
 class ProductoForms(forms.ModelForm):
+    nombre = forms.CharField(min_length=4, max_length=50)
+    precio = forms.IntegerField(min_value=1, max_value=999999)
+    imagen = forms.ImageField(required=False, validators= [MaxSizeFileValidator(max_file_size=2)])
+
+
+    def clean_nombre(self):
+        nombre = self.cleaned_data["nombre"]
+        existe = Producto.objects.filter(nombre__iexact=nombre).exists
+
+        if existe:
+            raise ValidationError("Este nombre ya esta ingresado")
+        return nombre
 
     class Meta:
         model= Producto
