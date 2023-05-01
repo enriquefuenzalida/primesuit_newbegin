@@ -4,7 +4,7 @@
 
 {% block js %}
 <script>
-$.get("http://127.0.0.1:8000/api/marca/?format=json",
+$.get("/api/marca/?format=json",
 function(data){
 	$.each(data, function(i,item){
 		$("#productoLista").append("<div class=\"_prod2\"><div class=\"_proddesc\"><h5>" + item.nombre + "</h5></div></div>"); }); });

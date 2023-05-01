@@ -4,7 +4,7 @@
 
 {% block js %}
 <script>
-$.get("http://127.0.0.1:8000/api/producto/?format=json",
+$.get("/api/producto/?format=json",
 function(data){
 	$.each(data, function(i,item){
 		$("#productoLista").append("<div class=\"_prod\" style=\"background-image: url(\'" + item.imagen + "\');\"></div>"); }); });
