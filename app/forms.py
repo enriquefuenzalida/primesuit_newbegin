@@ -26,7 +26,7 @@ class ProductoForms(forms.ModelForm):
 
     def clean_nombre(self):
         nombre = self.cleaned_data["nombre"]
-        existe = Producto.objects.filter(nombre__iexact=nombre).exists
+        existe = Producto.objects.filter(nombre__iexact=nombre).exists()
 
         if existe:
             raise ValidationError("Este nombre ya esta ingresado")
