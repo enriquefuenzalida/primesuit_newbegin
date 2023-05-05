@@ -58,9 +58,11 @@ def galeria(request):
     }
     return render(request, 'app/galeria.html', data)
 
+@permission_required('app.add_producto')
 def galeriajson(request):
     return render(request, 'app/galeriajson.html')
 
+@permission_required('app.add_producto')
 def marcasjson(request):
     return render(request, 'app/marcasjson.html')
 

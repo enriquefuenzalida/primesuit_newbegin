@@ -27,15 +27,11 @@
                     <li><a href="{% url 'home' %}"> Inicio </a></li>
                     <li><a href="{% url 'contacto' %}">Contacto</a></li>
                     <li><a href="{% url 'galeria' %}">Galería</a></li>
+                    {% if perms.app.add_producto %}
                     <li><a href="{% url 'galeriajson' %}">Fotos JSON</a></li>
                     <li><a href="{% url 'marcasjson' %}">Marcas JSON</a></li>
-                    {% if perms.app.add_producto %}
                     <li><a href="{% url 'agregar_producto' %}">Agergar producto</a></li>
-                    {% endif %}
-                    {% if perms.app.view_producto %}
                     <li><a href="{% url 'Listar_producto' %}">Listado</a></li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
                     {% else %}
                     <li><a href="{% url 'login' %}">Inicar sesion</a></li>
