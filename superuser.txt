@@ -1,3 +1,7 @@
 primesuit
 
 12AB34cd
+
+token: 2da2ef5ef3ccb9ee9b3f6b7f610d1aeec0a383a2
+
+127.0.0.1:8000/api/  'Authorization: Token 2da2ef5ef3ccb9ee9b3f6b7f610d1aeec0a383a2'

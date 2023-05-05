@@ -46,8 +46,17 @@ INSTALLED_APPS = [
     'colorfield',
     'django.contrib.humanize',
     'crispy_forms',
+
+    # Third-Party Apps
     'rest_framework',
+    'rest_framework.authtoken',  
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  
+    ],
+}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

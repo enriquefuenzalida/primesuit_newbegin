@@ -7,15 +7,20 @@ from django.http import Http404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, permission_required
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from .serializers import ProductoSerializer, MarcaSerializers
 
 # Create your views here.
 
 class MarcaViewset(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
     queryset = Marca.objects.all()
     serializer_class = MarcaSerializers
 
 class ProductoViewset(viewsets.ModelViewSet):
+
+    permission_classes = (IsAuthenticated,)
+
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
 
