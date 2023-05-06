@@ -17,37 +17,6 @@
 {% load static %}
 
 {% load humanize %}
-<!--
-<div class="row">
-    <div class="col-12" style="max-width: 987px; margin: 2em auto;">
-        <div class="card">
-            <div class="card-body">
-<h2>Productos</h2>
-<hr/>
-<div class="productos d-flex" id="prodlist">
-
-    {% for p in productos %}
-
-     <div class="producto col-md-3">
-          <div class="contenedor_producto">
-               {% if p.imagen %}<img src="{{ p.imagen.url }}" alt="producto imagen">{% endif %}
-               <div class="detalle">
-                    <h5>{{ p.marca | capfirst }}</h5>
-                    <h2>{{ p.nombre | title }}</h2>
-                    <h3>$ {{ p.precio | intcomma }}</h3>
-               </div>
-          </div>
-     </div>
-
-    {% endfor %}
-
-</div>
-
-</div>
-</div>
-</div>
-</div>
--->
 <div style="padding: 34px;">
     <div style="max-width: 987px; margin: 2em auto;">
 
