@@ -18,9 +18,7 @@ class MarcaViewset(viewsets.ModelViewSet):
     serializer_class = MarcaSerializers
 
 class ProductoViewset(viewsets.ModelViewSet):
-
     permission_classes = (IsAuthenticated,)
-
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
 

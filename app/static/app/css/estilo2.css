@@ -329,7 +329,6 @@ a.sesIniRegLink:hover {
 
 
 ul#juanito li {
-    margin-left: 1em;
 }
 
 
@@ -441,3 +440,17 @@ div#prodlist h5 {
 #formuno label {
     margin: 2em 0 0 0;
 }
+
+
+.bg-img{
+    background-image: 
+    /* top, transparent red */
+    linear-gradient(
+      rgba(0, 0, 0, 0.55), 
+      rgba(0, 0, 0, 0.55)
+    ),
+    /* your image */
+    url("../img/pexels-pixabay-259950.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
