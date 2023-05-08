@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # Third-Party Apps
     'rest_framework',
+    'rest_primesuit',
     'rest_framework.authtoken',  
 ]
 
