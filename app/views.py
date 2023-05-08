@@ -13,12 +13,12 @@ from .serializers import ProductoSerializer, MarcaSerializers
 # Create your views here.
 
 class MarcaViewset(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated,)
+    #permission_classes = (IsAuthenticated,)
     queryset = Marca.objects.all()
     serializer_class = MarcaSerializers
 
 class ProductoViewset(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated,)
+    #permission_classes = (IsAuthenticated,)
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
 
