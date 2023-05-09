@@ -8,6 +8,11 @@ $.get("/api/producto/?format=json",
 function(data){
 	$.each(data, function(i,item){
 		$("#productoLista").append("<div class=\"_prod\" style=\"background-image: url(\'" + item.imagen + "\');\"></div>"); }); });
+
+$.get("/api/marca/?format=json",
+function(data){
+	$.each(data, function(i,item){
+		$("#productoListaB").append("<div class=\"_prod2\"><div class=\"_proddesc\"><h5>" + item.nombre + "</h5></div></div>"); }); });
         </script>
 {% endblock %}
 
@@ -22,13 +27,21 @@ function(data){
 <div style="padding: 34px;">
     <div style="max-width: 987px; margin: 2em auto;">
 
-<h2>Fotos Lista JSON</h2>
-<hr/>
-<div class="flexOne" id="productoLista">
- 
+        <h2>Marcas Lista JSON</h2>
+        <hr/>
+        <div class="flexOne" id="productoListaB">
+        </div>
 
-</div>
-</div>
+        <hr/>
+        <hr/>
+        <hr/>
+
+        <h2>Fotos Lista JSON</h2>
+        <hr/>
+        <div class="flexOne" id="productoLista">
+        </div>
+
+    </div>
 </div>
 
 

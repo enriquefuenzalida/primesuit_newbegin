@@ -11,10 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/estilo2.css' %}" />
+
 {% block css %}
 {% endblock %}
-
-    
+ 
 </head>
 <body>
 
@@ -28,8 +28,8 @@
                     <li><a href="{% url 'contacto' %}">Contacto</a></li>
                     <li><a href="{% url 'galeria' %}">Galería</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'galeriajson' %}">Fotos JSON</a></li>
-                    <li><a href="{% url 'marcasjson' %}">Marcas JSON</a></li>
+                    <li><a href="{% url 'galeriajson' %}">JSON locales</a></li>
+                    <li><a href="{% url 'marcasjson' %}">JSON externo</a></li>
                     {% endif %}
                     {% if perms.app.add_producto %}
                     <li><a href="{% url 'agregar_producto' %}">Agergar producto</a></li>

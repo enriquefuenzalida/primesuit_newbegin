@@ -4,10 +4,36 @@
 
 {% block js %}
 <script>
-$.get("/api/marca/?format=json",
+$.get("https://www.themealdb.com/api/json/v1/1/random.php",
 function(data){
-	$.each(data, function(i,item){
-		$("#productoLista").append("<div class=\"_prod2\"><div class=\"_proddesc\"><h5>" + item.nombre + "</h5></div></div>"); }); });
+	$.each(data.meals, function(i,item){
+		$("#superJSON").append("<dt><h3>Plato</h3></dt><dd><p>" + item.strMeal + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3>Categoría</h3></dt><dd><p>" + item.strCategory + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3>Origen</h3></dt><dd><p>" + item.strArea + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3>Instrucciones</h3></dt><dd><p>" + item.strInstructions + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3>Imagen</h3></dt><dd><p><img src=\"" + item.strMealThumb + "\" /></p><hr/></dd>");
+        $("#superJSON").append("<dt><h3> Ingrediente 1: " + item.strIngredient1 + "</h3></dt><dd><p>Medida: " + item.strMeasure1 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 2: " + item.strIngredient2 + "</h3></dt><dd><p>Medida: " + item.strMeasure2 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 3: " + item.strIngredient3 + "</h3></dt><dd><p>Medida: " + item.strMeasure3 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 4: " + item.strIngredient4 + "</h3></dt><dd><p>Medida: " + item.strMeasure4 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 5: " + item.strIngredient5 + "</h3></dt><dd><p>Medida: " + item.strMeasure5 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 6: " + item.strIngredient6 + "</h3></dt><dd><p>Medida: " + item.strMeasure6 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 7: " + item.strIngredient7 + "</h3></dt><dd><p>Medida: " + item.strMeasure7 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 8: " + item.strIngredient8 + "</h3></dt><dd><p>Medida: " + item.strMeasure8 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 9: " + item.strIngredient9 + "</h3></dt><dd><p>Medida: " + item.strMeasure9 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 10: " + item.strIngredient10 + "</h3></dt><dd><p>Medida: " + item.strMeasure10 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 11: " + item.strIngredient11 + "</h3></dt><dd><p>Medida: " + item.strMeasure11 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 12: " + item.strIngredient12 + "</h3></dt><dd><p>Medida: " + item.strMeasure12 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 13: " + item.strIngredient13 + "</h3></dt><dd><p>Medida: " + item.strMeasure13 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 14: " + item.strIngredient14 + "</h3></dt><dd><p>Medida: " + item.strMeasure14 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 15: " + item.strIngredient15 + "</h3></dt><dd><p>Medida: " + item.strMeasure15 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 16: " + item.strIngredient16 + "</h3></dt><dd><p>Medida: " + item.strMeasure16 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 17: " + item.strIngredient17 + "</h3></dt><dd><p>Medida: " + item.strMeasure17 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 18: " + item.strIngredient18 + "</h3></dt><dd><p>Medida: " + item.strMeasure18 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 19: " + item.strIngredient19 + "</h3></dt><dd><p>Medida: " + item.strMeasure19 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3> Ingrediente 20: " + item.strIngredient20 + "</h3></dt><dd><p>Medida: " + item.strMeasure20 + "</p><hr/></dd>");
+		$("#superJSON").append("<dt><h3>Fuente</h3></dt><dd><p>" + item.strSource + "</p><hr/></dd>");
+     }); });
         </script>
 {% endblock %}
 
@@ -21,14 +47,11 @@ function(data){
 
 <div style="padding: 34px;">
     <div style="max-width: 987px; margin: 2em auto;">
-
-<h2>Marcas Lista JSON</h2>
-<hr/>
-<div class="flexOne" id="productoLista">
- 
-
-</div>
-</div>
+        <h2>JSON externo</h2>
+        <hr/>
+        <dl id="superJSON">
+        </dl>
+    </div>
 </div>
 
 
